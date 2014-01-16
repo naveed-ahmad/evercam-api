@@ -1,7 +1,7 @@
 module Evercam
   class WebRouter < Sinatra::Base
 
-   include WebErrors
+    include WebErrors
     set :raise_errors, false
     set :show_exceptions, false
     set :views, File.expand_path('../../views', __FILE__)
@@ -12,7 +12,7 @@ module Evercam
     end
 
     configure do
-      set :erb, layout: 'layouts/default'.to_sym, trim: '-'      
+      set :erb, layout: 'layouts/default'.to_sym, trim: '-'
     end
 
     set :public_folder, Proc.new { File.join(root, "/public") }
@@ -64,7 +64,7 @@ module Evercam
     helpers Sinatra::Cookies
     helpers Sinatra::RedirectWithFlash
     helpers Evercam::FormHelpers
-    helpers Evercam::TemplateHelpers  
-    
-  end  
+    helpers Evercam::TemplateHelpers
+
+  end
 end

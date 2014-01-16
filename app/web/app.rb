@@ -10,7 +10,7 @@
  'helpers/template_helpers',
  'routes/root_router',
  'routes/connect_router',
- 'routes/docs_router', 
+ 'routes/docs_router',
  'routes/user_router',
  'routes/signup_router',
  'routes/login_router',
