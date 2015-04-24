@@ -147,12 +147,6 @@ module Evercam
         rights = requester_rights_for(target, AccessRight::USER)
         raise AuthorizationError.new if !rights.allow?(AccessRight::DELETE)
 
-        #delete user owned cameras
-        query = Camera.where(owner: target)
-        query.eager(:owner).all.select do |camera|
-          camera.destroy
-        end
-
         target.destroy
         {}
       end

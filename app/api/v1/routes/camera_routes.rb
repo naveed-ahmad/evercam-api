@@ -74,7 +74,7 @@ module Evercam
       rights = requester_rights_for(camera)
       unless rights.allow?(AccessRight::LIST)
         raise AuthorizationError.new if camera.is_public?
-        raise NotFoundError.new unless camera.is_public?
+        authorize! unless camera.is_public?
       end
 
       CameraActivity.create(
